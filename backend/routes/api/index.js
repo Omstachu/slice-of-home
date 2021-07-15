@@ -1,9 +1,18 @@
 const router = require('express').Router()
+const sessionRouter = require('./session')
+const usersRouter = require('./users')
 const asyncHandler = require('express-async-handler')
 
-const {User} = require('../../db/models')
+router.use('/session', sessionRouter)
+router.use('/users', usersRouter)
+
+
+
+module.exports = router
+
 
 // ? Code for testing user auth middleware routes
+// const {User} = require('../../db/models')
 // const {setTokenCookie} = require('../../utils/auth')
 // const {restoreUser} = require('../../utils/auth')
 // const {requireAuth} = require('../../utils/auth')
@@ -29,5 +38,3 @@ const {User} = require('../../db/models')
 // router.post('/test', (req, res) =>{
 //     return res.json({requestBody: req.body})
 // })
-
-module.exports = router
