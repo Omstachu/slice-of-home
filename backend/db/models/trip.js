@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Trip.associate = function(models) {
     // associations can be defined
-    Trip.belongsTo(models.Spots, {foreignKey: "spotId"})
-    Trip.belongsTo(models.Users, {foreignKey: "userId"})
+    Trip.belongsTo(models.Spot, {foreignKey: "spotId"})
+    Trip.belongsTo(models.User, {foreignKey: "userId"})
   };
   return Trip;
 };

@@ -1,10 +1,12 @@
 const router = require('express').Router()
 const sessionRouter = require('./session')
 const usersRouter = require('./users')
+const spotsRouter = require('./spots')
 const asyncHandler = require('express-async-handler')
 
 router.use('/session', sessionRouter)
 router.use('/users', usersRouter)
+router.use('/spots', spotsRouter)
 
 
 
