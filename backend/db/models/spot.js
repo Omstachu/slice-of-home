@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     Spot.belongsTo(models.Users, {foreignKey: 'userId'})
     Spot.belongsTo(models.Cities, {foreignKey: 'cityId'})
     Spot.hasMany(models.Images, {foreignKey: 'spotId'})
+    Spot.hasMany(models.Trips, {foreignKey: 'spotId'})
   };
   return Spot;
 };
