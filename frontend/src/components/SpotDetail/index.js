@@ -22,8 +22,8 @@ const SpotDetail = () => {
     const image = spot[id]?.Images[0].url
     const images = spot[id]?.Images.map(image => image.url)
 
-    console.log("image: ", image)
-    console.log("spot: ", spot[id])
+    // console.log("image: ", image)
+    // console.log("spot: ", spot[id])
 
     const dispatch = useDispatch()
 

@@ -37,10 +37,12 @@ const spotReducer = (state = initialState, action) => {
     switch (action.type){
         case LOAD:
         const allSpots = {}
-        action.list.forEach(spot => {
-            // console.log(spot)
-            allSpots[spot.id] = spot
-        })
+        if (action.list){
+            action.list.forEach(spot => {
+                // console.log(spot)
+                allSpots[spot.id] = spot
+            })
+        }
         return {
             ...allSpots,
             ...state,
@@ -61,7 +63,7 @@ const spotReducer = (state = initialState, action) => {
                 [action.spot.id]: {
                     ...state[action.spot.id],
                     ...action.spot
-                }
+                },
             }
         }
         default:

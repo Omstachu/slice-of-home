@@ -1,9 +1,18 @@
 import {useState, useEffect} from 'react'
+import { NavLink } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
+
+import './SpotDisplay.css'
 
 import {getSpot} from '../../store/spot'
 
 const SpotsDisplay = () => {
+
+    const spots = useSelector(state => {
+        return state.spot.list
+    })
+
+    console.log(spots)
 
     const spotImages = useSelector(state => {
         return state.spot.list.map(spot=>{
@@ -23,13 +32,18 @@ const SpotsDisplay = () => {
                 <h2>
                     Test
                 </h2>
-                {spotImages.map((image) => {
-                    return (
-                    <div>
-                        <img src={image} alt="placeholder"/>
-                    </div>
-                    )
-                })}
+                <div className= 'image-container'>
+                    {spots.map((spot) => {
+                        const image = spot.Images[0].url
+                        return (
+                            <div key={spot.id}>
+                                <NavLink to={`/spots/${spot.id}`}>
+                                    <img src={image} alt="placeholder"/>
+                                </NavLink>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </main>
     )

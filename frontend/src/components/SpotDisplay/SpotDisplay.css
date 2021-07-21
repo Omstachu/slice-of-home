@@ -1,0 +1,15 @@
+img {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: slategray;
+    box-sizing: border-box;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
