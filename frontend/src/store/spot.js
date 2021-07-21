@@ -1,3 +1,4 @@
+import {csrfFetch} from'./csrf'
 const LOAD = 'spot/LOAD'
 const ADD_ONE = 'spot/ADD_ONE'
 
@@ -30,6 +31,20 @@ export const getSpotDetail = (id) => async dispatch => {
     if (res.ok){
         const detail = await res.json()
         dispatch(addOneSpot(detail))
+    }
+}
+
+export const createSpotForm = (payload) => async dispatch => {
+    const res = await csrfFetch('/api/spots', {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    })
+
+    const newSpot = await res.json()
+
+    if(res.ok){
+        dispatch(addOneSpot(newSpot))
     }
 }
 

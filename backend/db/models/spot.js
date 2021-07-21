@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     address: {
       type: DataTypes.STRING,
       validate: {
-        len: [1, 100]
+        len: [0, 100]
       }
     },
 
