@@ -14,11 +14,11 @@ const SpotsDisplay = () => {
 
     console.log(spots)
 
-    const spotImages = useSelector(state => {
-        return state.spot.list.map(spot=>{
-            return spot.Images[0].url
-        })
-    })
+    // const spotImages = useSelector(state => {
+    //     return state.spot.list.map(spot=>{
+    //         return spot.Images[0]?.url
+    //     })
+    // })
 
     const dispatch = useDispatch()
 
@@ -34,7 +34,7 @@ const SpotsDisplay = () => {
                 </h2>
                 <div className= 'image-container'>
                     {spots.map((spot) => {
-                        const image = spot.Images[0].url
+                        const image = spot.Images[0]?.url
                         return (
                             <div key={spot.id}>
                                 <NavLink to={`/spots/${spot.id}`}>

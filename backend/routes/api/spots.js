@@ -16,6 +16,13 @@ router.get('/', asyncHandler(async(req,res) => {
     })
     return res.json(spots)
 }))
+
+router.post("/", asyncHandler(async(req,res) => {
+    console.log(req.body)
+    const spot = await Spot.create(req.body)
+    return res.json(spot)
+}))
+
 router.get('/:id', asyncHandler(async(req,res) => {
     const id = req.params.id
     const spots = await Spot.findByPk(id, {
@@ -24,11 +31,12 @@ router.get('/:id', asyncHandler(async(req,res) => {
     })
     return res.json(spots)
 }))
-router.post("/", asyncHandler(async(req,res) => {
-    console.log(req.body)
-    const spot = await Spot.create(req.body)
-    res.cookie("XSRF-Token", req.csrfToken())
-    return res.json(spot)
+
+router.delete('/:id', asyncHandler(async(req,res) =>{
+    const id = req.params.id
+    const spot = await Spot.findByPk(id)
+    spot.destroy()
+
 }))
 
 module.exports = router

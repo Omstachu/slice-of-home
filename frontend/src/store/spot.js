@@ -48,6 +48,16 @@ export const createSpotForm = (payload) => async dispatch => {
     }
 }
 
+export const deleteSpot = (id) => async dispatch => {
+    const res = await csrfFetch(`/api/spots/${id}`,{
+        method: 'DELETE',
+        headers: {"Content-Type": "application/json"},
+    })
+
+    const deletedSpot = await res.json()
+    console.log(deletedSpot)
+}
+
 const spotReducer = (state = initialState, action) => {
     switch (action.type){
         case LOAD:

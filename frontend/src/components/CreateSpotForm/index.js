@@ -24,9 +24,9 @@ const CreateSpotForm = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    // const largestSpot = useSelector(state => {
-    //     return state.spot?.list[0]?.id + 1
-    // })
+    const largestSpot = useSelector(state => {
+        return state.spot?.list[0]?.id + 1
+    })
 
     // const spot = useSelector(state => {
     //     return state.spot
