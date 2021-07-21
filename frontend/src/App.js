@@ -32,11 +32,11 @@ function App() {
       <Route path='/signup'>
         <SignupFormPage />
       </Route>
-      <Route path='/spots/:id'>
-        <SpotDetail />
-      </Route>
       <Route path='/spots/new'>
         <CreateSpotForm />
+      </Route>
+      <Route path='/spots/:id'>
+        <SpotDetail />
       </Route>
       <Route path='/spots'>
         <SpotsDisplay />

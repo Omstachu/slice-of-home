@@ -1,0 +1,4 @@
+.create-spot-form {
+    position: flex;
+    flex-direction: column;
+}

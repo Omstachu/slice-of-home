@@ -18,7 +18,7 @@ const CreateSpotForm = () => {
 
     return (
         <div>
-            <form>
+            <form className='create-spot-form'>
                 <ul>
                 </ul>
                 <input
@@ -56,7 +56,7 @@ const CreateSpotForm = () => {
                     value={description}
                     onChange={updateDescription}
                     />
-
+                <button type="submit">Submit!</button>
 
             </form>
         </div>
