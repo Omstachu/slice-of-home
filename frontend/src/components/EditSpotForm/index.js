@@ -45,6 +45,12 @@ const EditSpotForm = ({spotId, hideForm}) => {
         // console.log(res)
     }
 
+    const handleCancel = e => {
+        e.preventDefault()
+        hideForm()
+    }
+
+
     return (
         <div>
             <form onSubmit={onSubmit}>
@@ -78,6 +84,7 @@ const EditSpotForm = ({spotId, hideForm}) => {
                     onChange={updateUrl}
                     /> */}
                 <button type='submit'>Submit</button>
+                <button onClick={handleCancel}>Cancel</button>
                 {/* <div>
                     <img src={url} alt="preview"/>
                 </div> */}

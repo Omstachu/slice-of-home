@@ -18,16 +18,19 @@ const SpotDetail = () => {
     // })
 
 
+
     const spot = useSelector(state => {
         return state.spot
     })
 
+    // console.log(spot)
+
     const dispatch = useDispatch()
     const history = useHistory()
 
-    if (!spot[id]){
-        history.push('/')
-    }
+    // if (!spot[id]){
+    //     history.push('/')
+    // }
 
     const name = spot[id]?.name
     const description = spot[id]?.description
@@ -46,6 +49,12 @@ const SpotDetail = () => {
     useEffect(() => {
         dispatch(getSpotDetail(id))
     }, [dispatch,id])
+
+    useEffect(()=> {
+        if (!spot[id]){
+            history.push('/')
+        }
+    })
 
     const handleClick = async e => {
         const res = await dispatch(deleteSpot(id))

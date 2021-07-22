@@ -12,7 +12,7 @@ const SpotsDisplay = () => {
         return state.spot.list
     })
 
-    console.log(spots)
+    // console.log(spots)
 
     // const spotImages = useSelector(state => {
     //     return state.spot.list.map(spot=>{

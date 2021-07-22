@@ -32,6 +32,7 @@ export const getSpotDetail = (id) => async dispatch => {
         const detail = await res.json()
         dispatch(addOneSpot(detail))
     }
+
 }
 
 export const createSpotForm = (payload) => async dispatch => {
@@ -90,10 +91,10 @@ const spotReducer = (state = initialState, action) => {
             list: [...action.list]
         }
         case ADD_ONE: {
-            if (!state[action.spot.id]) {
+            if (!state[action.spot?.id]) {
                 const newState = {
                     ...state,
-                    [action.spot.id]: action.spot
+                    [action.spot?.id]: action.spot
                 };
                 const spotList = newState.list.map(id => newState[id])
                 spotList.push(action.spot);
