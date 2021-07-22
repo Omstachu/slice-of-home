@@ -49,7 +49,7 @@ const SpotDetail = () => {
     const name = spot[id]?.name
     const description = spot[id]?.description
     let image;
-    if (spot[id]){
+    if (spot[id]?.Images){
         if (spot[id]?.Images[0]?.url){
             image = spot[id]?.Images[0]?.url
         }
