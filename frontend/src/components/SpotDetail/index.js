@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { deleteSpot, getSpotDetail } from '../../store/spot';
-
+import EditSpotForm from '../EditSpotForm';
 
 const SpotDetail = () => {
-
+    const [showEditForm, setShowEditForm] = useState(false)
     const {id} = useParams()
 
     // const spotInfo = useSelector(state => {
@@ -56,6 +56,14 @@ const SpotDetail = () => {
         }
     }
 
+    let content = null
+
+    if(showEditForm) {
+        content = (
+            <EditSpotForm spotId={id} hideForm={() => setShowEditForm(false)}/>
+        )
+    }
+
     return (
         <div>
             <h1>{name}</h1>
@@ -64,7 +72,12 @@ const SpotDetail = () => {
             </a>
             <p>{description}</p>
             <button onClick={handleClick}>Delete</button>
-            <button>Edit</button>
+            {!showEditForm && (
+                <button onClick={() => setShowEditForm(true)}>Edit</button>
+            )}
+            <div>
+                {content}
+            </div>
         </div>
     )
 }

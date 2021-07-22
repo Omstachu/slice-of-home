@@ -56,6 +56,8 @@ export const editSpot = (id, payload) => async dispatch => {
     })
 
     const newSpot = await res.json()
+    // console.log("--------------------------------------------")
+    // console.log(newSpot)
 
     if(res.ok){
         dispatch(addOneSpot(newSpot))
@@ -69,7 +71,7 @@ export const deleteSpot = (id) => async dispatch => {
     })
 
     const deletedSpot = await res.json()
-    console.log(deletedSpot)
+    // console.log(deletedSpot)
 }
 
 const spotReducer = (state = initialState, action) => {
