@@ -1,4 +1,32 @@
+.create-spot-form-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
 .create-spot-form {
-    position: flex;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}
+
+input {
+    display: flex;
+    border-radius: 4px;
+    border-color: lightcyan;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    color: rgb(192, 106, 106);
+    text-align: center;
+    width: 33%;
+    height: 40px;
+    background-color: #7bbad3
+}
+
+::placeholder {
+    color: #708ccc;
+    opacity: 1;
 }

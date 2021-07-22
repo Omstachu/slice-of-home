@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createSpotForm, getSpot } from "../../store/spot";
 
+import './CreateSpotForm.css'
+
 const CreateSpotForm = () => {
     const [name, setName] = useState("")
     const [country, setCountry] = useState("")
@@ -69,7 +71,7 @@ const CreateSpotForm = () => {
 
 
     return (
-        <div>
+        <div className="create-spot-form-container">
             <form className='create-spot-form' onSubmit={onSubmit}>
                 <ul>
                 </ul>
@@ -122,7 +124,7 @@ const CreateSpotForm = () => {
                     value={url}
                     onChange={updateUrl}
                     />
-                <button type="submit">Submit!</button>
+                <button className="submit-button" type="submit">Submit!</button>
                 <div>
                     <img src={url} alt="preview"/>
                 </div>

@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import { deleteSpot, getSpotDetail } from '../../store/spot';
 import EditSpotForm from '../EditSpotForm';
 
+import './SpotDetail.css'
+
 const SpotDetail = () => {
     // const [name, setName] = useState('')
     // const [description, setDescription] = useState('')
@@ -107,10 +109,10 @@ const SpotDetail = () => {
 
 
     return (
-        <div>
-            <h1>{name}</h1>
+        <div className='spot-detail-container'>
+            <h1 className="spot-title">{name}</h1>
             <a href={image}>
-                <img src={image} alt={name}/>
+                <img className='spot-detail-image'  src={image} alt={name}/>
             </a>
             <p>{description}</p>
             {postBelongsToUser && (

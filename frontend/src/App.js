@@ -11,6 +11,7 @@ import CreateSpotForm from './components/CreateSpotForm';
 import Navigation from './components/Navigation'
 import * as sessionActions from "./store/session"
 
+import './index.css'
 
 function App() {
   const dispatch = useDispatch();

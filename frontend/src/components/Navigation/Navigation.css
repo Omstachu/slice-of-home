@@ -1,3 +1,25 @@
 .Navbar-link {
-    color: slateblue
+    color: #708ccc;
+    text-decoration: hotpink;
+    font-size: x-large;
+    font-family: 'Lora', serif;
+    font-weight: 900;
 }
+
+.nav-links-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    border-radius: 4px;
+    background-color: #7bbad3;
+    width: 100%;
+    height: 40px;
+}
+
+
+/* font-family: 'BioRhyme', serif;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Oswald', sans-serif; */
