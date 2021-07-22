@@ -57,11 +57,12 @@ const CreateSpotForm = () => {
         }
 
         const res = await dispatch(createSpotForm(payload))
-
-        let createdSpot;
-        if (createdSpot){
-            history.push('/')
-        }
+        history.push('/spots')
+        // console.log(res)
+        // let createdSpot;
+        // if (createdSpot){
+        //     history.push('/')
+        // }
     }
 
 

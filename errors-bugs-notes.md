@@ -32,3 +32,9 @@
                     ...state,
                     [action.spot.id]: action.spot
  ```
+
+
+### Redux Store Dev tools not working. getting a No Store Found.
+
+
+### state.spot[id] sometimes just doesn't work
