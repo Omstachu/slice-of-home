@@ -23,6 +23,18 @@
     }
    ```
 
+   * error fixed by checking to see if spot[id]?.Images exists
+
+   ```
+   if (spot[id]?.Images){
+        if (spot[id]?.Images[0]?.url){
+            image = spot[id]?.Images[0]?.url
+        }
+    } else {
+        image = null
+    }
+    ```
+
 ### When trying to access /spots/:id with an Id that doesn't exist you get:
  * Unhandled Rejection (TypeError): Cannot read property 'id' of null
  ```

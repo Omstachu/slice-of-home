@@ -13,6 +13,7 @@ const SpotDetail = () => {
     // const [image, setImage] = useState('')
 
     const [showEditForm, setShowEditForm] = useState(false)
+    const [showDeleteForm, setShowDeleteForm] = useState(false)
 
     const {id} = useParams()
 
@@ -24,13 +25,24 @@ const SpotDetail = () => {
 
 
 
+
+
     const spot = useSelector(state => {
         return state.spot
     })
 
-    console.log("id", id)
-    console.log("spot", spot)
-    console.log("spot.id", spot[id])
+    const sessionUser = useSelector(state => state.session)
+    const sessionUserId = sessionUser.user.id
+
+    const spotUserId = spot[id]?.userId
+    console.log("postUserId", spotUserId, "\nsessionId", sessionUserId)
+
+    const postBelongsToUser = spotUserId === sessionUserId
+
+
+    // console.log("id", id)
+    // console.log("spot", spot)
+    // console.log("spot.id", spot[id])
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -78,13 +90,21 @@ const SpotDetail = () => {
 
     }
 
-    let content = null
+    let editContent = null
+    let deleteButton = null
 
     if(showEditForm) {
-        content = (
+        editContent = (
             <EditSpotForm spotId={id} hideForm={() => setShowEditForm(false)}/>
         )
     }
+    if(showDeleteForm) {
+        deleteButton = (
+            <button onClick={handleDelete}>Delete</button>
+        )
+    }
+
+
 
     return (
         <div>
@@ -93,12 +113,16 @@ const SpotDetail = () => {
                 <img src={image} alt={name}/>
             </a>
             <p>{description}</p>
-            <button onClick={handleDelete}>Delete</button>
-            {!showEditForm && (
+            {postBelongsToUser && (
+                <button onClick={handleDelete}>Delete</button>
+            )}
+            {deleteButton}
+
+            {(!showEditForm && postBelongsToUser) && (
                 <button onClick={() => setShowEditForm(true)}>Edit</button>
             )}
             <div>
-                {content}
+                {editContent}
             </div>
         </div>
     )

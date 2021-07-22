@@ -43,6 +43,7 @@ const CreateSpotForm = () => {
         dispatch(getSpot())
     },[dispatch])
 
+    const state = useSelector((state) => state)
     const onSubmit = async(e) => {
         e.preventDefault();
 
@@ -57,7 +58,8 @@ const CreateSpotForm = () => {
         }
 
         const res = await dispatch(createSpotForm(payload))
-        history.push('/spots')
+        const newId = state.spot.list[0].id
+        history.push(`/spots/${newId}`)
         // console.log(res)
         // let createdSpot;
         // if (createdSpot){
