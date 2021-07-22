@@ -18,8 +18,9 @@ router.get('/', asyncHandler(async(req,res) => {
 }))
 
 router.post("/", asyncHandler(async(req,res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const spot = await Spot.create(req.body)
+    console.log(spot.dataValues.id)
     return res.json(spot)
 }))
 

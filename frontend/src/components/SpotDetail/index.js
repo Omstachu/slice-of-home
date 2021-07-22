@@ -15,9 +15,17 @@ const SpotDetail = () => {
     //     })
     // })
 
+
     const spot = useSelector(state => {
         return state.spot
     })
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    if (!spot[id]){
+        history.push('/')
+    }
 
     const name = spot[id]?.name
     const description = spot[id]?.description
@@ -32,8 +40,6 @@ const SpotDetail = () => {
     // console.log("image: ", image)
     // console.log("spot: ", spot[id])
 
-    const dispatch = useDispatch()
-    const history = useHistory()
 
     useEffect(() => {
         dispatch(getSpotDetail(id))

@@ -17,8 +17,6 @@ function Navigation ({isLoaded}) {
             <>
                     <NavLink className="Navbar-link" to='/login'>Log in</NavLink>
                     <NavLink className="Navbar-link" to='/signup'>Sign Up</NavLink>
-                    <NavLink className="Navbar-link" to='/spots'>Spots</NavLink>
-                    <NavLink className="Navbar-link" to='/spots/new'>NewSpot</NavLink>
             </>
 
         )
@@ -28,6 +26,8 @@ function Navigation ({isLoaded}) {
         <ul>
             <li>
                 <NavLink className="Navbar-link" exact to='/'>Home</NavLink>
+                <NavLink className="Navbar-link" to='/spots'>Spots</NavLink>
+                <NavLink className="Navbar-link" to='/spots/new'>NewSpot</NavLink>
                 {isLoaded && sessionLinks}
             </li>
         </ul>

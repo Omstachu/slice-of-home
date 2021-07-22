@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { createSpotForm, getSpot } from "../../store/spot";
 
 const CreateSpotForm = () => {
@@ -12,6 +12,10 @@ const CreateSpotForm = () => {
     const [description, setDescription] = useState("")
     const [url, setUrl] = useState("")
     const [validationErrors, setValidationErrors] = useState([])
+
+    const sessionUser = useSelector(state => state.session)
+    const id = sessionUser.user.id
+
 
     const updateName = e => setName(e.target.value)
     const updateCountry = e => setCountry(e.target.value)
@@ -43,7 +47,7 @@ const CreateSpotForm = () => {
         e.preventDefault();
 
         const payload = {
-            userId: 1,
+            userId: id,
             cityId: 1,
             name,
             country,
@@ -53,12 +57,13 @@ const CreateSpotForm = () => {
         }
 
         const res = await dispatch(createSpotForm(payload))
+
+        let createdSpot;
+        if (createdSpot){
+            history.push('/')
+        }
     }
 
-    let createdSpot;
-    if (createdSpot){
-        history.push('/')
-    }
 
     return (
         <div>
@@ -107,13 +112,13 @@ const CreateSpotForm = () => {
                     value={description}
                     onChange={updateDescription}
                     />
-                {/* <input
+                <input
                     type='text'
                     placeholder='Url to Image'
                     required
                     value={url}
                     onChange={updateUrl}
-                    /> */}
+                    />
                 <button type="submit">Submit!</button>
 
             </form>
