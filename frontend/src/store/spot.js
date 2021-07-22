@@ -48,6 +48,20 @@ export const createSpotForm = (payload) => async dispatch => {
     }
 }
 
+export const editSpot = (id, payload) => async dispatch => {
+    const res = await csrfFetch(`/api/spots/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    })
+
+    const newSpot = await res.json()
+
+    if(res.ok){
+        dispatch(addOneSpot(newSpot))
+    }
+}
+
 export const deleteSpot = (id) => async dispatch => {
     const res = await csrfFetch(`/api/spots/${id}`,{
         method: 'DELETE',

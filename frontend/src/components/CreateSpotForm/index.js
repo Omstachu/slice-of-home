@@ -120,7 +120,9 @@ const CreateSpotForm = () => {
                     onChange={updateUrl}
                     />
                 <button type="submit">Submit!</button>
-
+                <div>
+                    <img src={url} alt="preview"/>
+                </div>
             </form>
         </div>
     )

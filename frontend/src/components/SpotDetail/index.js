@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import {useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
@@ -57,9 +59,12 @@ const SpotDetail = () => {
     return (
         <div>
             <h1>{name}</h1>
-            <img src={image} alt={name}/>
+            <a href={image}>
+                <img src={image} alt={name}/>
+            </a>
             <p>{description}</p>
             <button onClick={handleClick}>Delete</button>
+            <button>Edit</button>
         </div>
     )
 }
