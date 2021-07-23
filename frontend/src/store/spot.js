@@ -56,7 +56,7 @@ export const editSpot = (id, payload) => async dispatch => {
         body: JSON.stringify(payload)
     })
 
-    console.log("payload", payload)
+
 
     const newSpot = await res.json()
     // console.log("--------------------------------------------")
