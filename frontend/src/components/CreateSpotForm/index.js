@@ -128,7 +128,9 @@ const CreateSpotForm = () => {
                     />
                 <button className="submit-button" type="submit">Submit!</button>
                 <div>
-                    <img className="create-spot-preview" src={url} alt="preview"/>
+                    {(url.length > 0) && (
+                     <img className="create-spot-preview" src={url} alt="preview"/>
+                    ) }
                 </div>
             </form>
         </div>

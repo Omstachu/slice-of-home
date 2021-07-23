@@ -129,10 +129,6 @@ const SpotDetail = () => {
     //     )
     // }
 
-
-
-
-
     return (
         <div className='spot-detail-container'>
             <h1 className="spot-title">{name}</h1>
@@ -140,7 +136,7 @@ const SpotDetail = () => {
                 {images && images.map((image, idx)=>{
                     return (
                         <a href={image} key={idx}>
-                                <img className='spot-detail-image'  src={image} alt={name}/>
+                                <img className='spot-detail-image' src={image} alt={name}/>
                             {/* <div>
                                 <button className="spot-detail-button spot-detail-delete-button">Delete</button>
                             </div> */}
