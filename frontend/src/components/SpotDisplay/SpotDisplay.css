@@ -1,10 +1,10 @@
 img {
     width: 400px;
     height: 300px;
-    margin: auto;
+    margin: 4px;
     border-radius: 1px;
     border-style: solid;
-    border-color: #708ccc;
+    border-color: #89ABE3FF;
     box-sizing: border-box;
 }
 

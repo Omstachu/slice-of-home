@@ -6,16 +6,21 @@ import {useHistory} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { deleteSpot, getSpotDetail } from '../../store/spot';
 import EditSpotForm from '../EditSpotForm';
+import AddImageForm from '../AddImageForm';
 
 import './SpotDetail.css'
 
 const SpotDetail = () => {
     // const [name, setName] = useState('')
     // const [description, setDescription] = useState('')
-    // const [image, setImage] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
+
 
     const [showEditForm, setShowEditForm] = useState(false)
-    const [showDeleteForm, setShowDeleteForm] = useState(false)
+    const [showImageForm, setShowImageForm] = useState(false)
+    // const [showDeleteForm, setShowDeleteForm] = useState(false)
+
+    const updateImageUrl = (e) => setImageUrl(e.target.value)
 
     const {id} = useParams()
 
@@ -26,9 +31,6 @@ const SpotDetail = () => {
     // })
 
 
-
-
-
     const spot = useSelector(state => {
         return state.spot
     })
@@ -37,7 +39,7 @@ const SpotDetail = () => {
     const sessionUserId = sessionUser.user.id
 
     const spotUserId = spot[id]?.userId
-    console.log("postUserId", spotUserId, "\nsessionId", sessionUserId)
+    // console.log("postUserId", spotUserId, "\nsessionId", sessionUserId)
 
     const postBelongsToUser = spotUserId === sessionUserId
 
@@ -86,6 +88,9 @@ const SpotDetail = () => {
         }
     })
 
+
+
+
     const handleDelete = async e => {
         await dispatch(deleteSpot(id))
         history.push('/spots')
@@ -93,18 +98,27 @@ const SpotDetail = () => {
     }
 
     let editContent = null
-    let deleteButton = null
+    let editImageContent = null
 
     if(showEditForm) {
         editContent = (
             <EditSpotForm spotId={id} hideForm={() => setShowEditForm(false)}/>
         )
     }
-    if(showDeleteForm) {
-        deleteButton = (
-            <button onClick={handleDelete}>Delete</button>
+
+    if(showImageForm){
+        editImageContent = (
+            <AddImageForm spotId={id} hideForm={() => setShowImageForm(false)}/>
         )
     }
+
+    // if(showDeleteForm) {
+    //     deleteButton = (
+    //         <button className="spot-detail-button spot-detail-delete-button" onClick={handleDelete}>Delete</button>
+    //     )
+    // }
+
+
 
 
 
@@ -116,16 +130,28 @@ const SpotDetail = () => {
             </a>
             <p>{description}</p>
             {postBelongsToUser && (
-                <button onClick={handleDelete}>Delete</button>
+                <button className="spot-detail-button spot-detail-delete-button" onClick={handleDelete}>Delete</button>
             )}
-            {deleteButton}
+            {/* {deleteButton} */}
 
             {(!showEditForm && postBelongsToUser) && (
-                <button onClick={() => setShowEditForm(true)}>Edit</button>
-            )}
+                <button className="spot-detail-button spot-detail-edit-button"  onClick={() => setShowEditForm(true)}>Edit</button>
+                )}
             <div>
                 {editContent}
             </div>
+
+            {postBelongsToUser && (
+                <button className="spot-detail-button spot-detail-image-button" onClick={()=> setShowImageForm(true)} >Add Image</button>
+            )}
+            <div>
+                {editImageContent}
+            </div>
+
+
+
+
+
         </div>
     )
 }

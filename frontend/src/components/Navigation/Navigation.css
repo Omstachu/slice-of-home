@@ -1,5 +1,7 @@
 .Navbar-link {
-    color: #708ccc;
+    /* color: #708ccc; */
+    /* color: #89ABE3FF; */
+    color: #298497;
     text-decoration: hotpink;
     font-size: x-large;
     font-family: 'Lora', serif;
@@ -12,10 +14,21 @@
     align-items: center;
     margin: auto;
     border-radius: 4px;
-    background-color: #7bbad3;
+    /* background-color: #7bbad3; */
+    /* background-color: #FCF6F5FF; */
+    background-color: #7FDCDC;
     width: 100%;
     height: 40px;
 }
+
+
+/* Colors
+#0E416A
+#298497
+#7FDCDC
+#F5F2DB
+#F0465D
+*/
 
 
 /* font-family: 'BioRhyme', serif;

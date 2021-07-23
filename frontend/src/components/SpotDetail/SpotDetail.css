@@ -28,3 +28,34 @@ a {
     flex-direction: column;
     align-items: center
 }
+
+.spot-detail-button {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
+    font-weight: 900;
+    justify-content: center;
+    background-color: lightgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.spot-detail-delete-button {
+    color: #F0465D;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #0E416A;
+}
+
+.spot-detail-edit-button {
+    color: #0E416A;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F0465D;
+}
+
+.spot-detail-image-button {
+    color: #F5F2DB;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #298497
+}
