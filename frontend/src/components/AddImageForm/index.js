@@ -15,7 +15,7 @@ const AddImageForm = ({spotId, hideForm}) =>{
 
         const payload = {
             spotId,
-            imageUrl
+            url: imageUrl
         }
 
         await dispatch(addImageForm(payload))

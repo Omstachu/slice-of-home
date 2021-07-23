@@ -65,13 +65,24 @@ const SpotDetail = () => {
     const name = spot[id]?.name
     const description = spot[id]?.description
     let image;
+    let images;
     if (spot[id]?.Images){
+        images = spot[id]?.Images.map(image => {
+            return image;
+        })
         if (spot[id]?.Images[0]?.url){
             image = spot[id]?.Images[0]?.url
         }
     } else {
         image = null
     }
+
+    images = images.map(image => {
+       return image.url
+    })
+
+    console.log(images)
+
     // const images = spot[id]?.Images.map(image => image.url)
 
     // console.log("image: ", image)
@@ -125,9 +136,16 @@ const SpotDetail = () => {
     return (
         <div className='spot-detail-container'>
             <h1 className="spot-title">{name}</h1>
-            <a href={image}>
+            {images.map((image, idx)=>{
+                return (
+                    <a href={image} key={idx}>
+                        <img className='spot-detail-image'  src={image} alt={name}/>
+                    </a>
+                )
+            })}
+            {/* <a href={image}>
                 <img className='spot-detail-image'  src={image} alt={name}/>
-            </a>
+            </a> */}
             <p>{description}</p>
             {postBelongsToUser && (
                 <button className="spot-detail-button spot-detail-delete-button" onClick={handleDelete}>Delete</button>
