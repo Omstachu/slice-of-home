@@ -77,11 +77,11 @@ const SpotDetail = () => {
         image = null
     }
 
-    images = images.map(image => {
+    images = images?.map(image => {
        return image.url
     })
 
-    console.log(images)
+    // console.log(images)
 
     // const images = spot[id]?.Images.map(image => image.url)
 
@@ -136,13 +136,18 @@ const SpotDetail = () => {
     return (
         <div className='spot-detail-container'>
             <h1 className="spot-title">{name}</h1>
-            {images.map((image, idx)=>{
-                return (
-                    <a href={image} key={idx}>
-                        <img className='spot-detail-image'  src={image} alt={name}/>
-                    </a>
-                )
-            })}
+            <div className='spot-detail-image-container'>
+                {images && images.map((image, idx)=>{
+                    return (
+                        <a href={image} key={idx}>
+                                <img className='spot-detail-image'  src={image} alt={name}/>
+                            {/* <div>
+                                <button className="spot-detail-button spot-detail-delete-button">Delete</button>
+                            </div> */}
+                        </a>
+                    )
+                })}
+            </div>
             {/* <a href={image}>
                 <img className='spot-detail-image'  src={image} alt={name}/>
             </a> */}
@@ -159,7 +164,7 @@ const SpotDetail = () => {
                 {editContent}
             </div>
 
-            {postBelongsToUser && (
+            {!showImageForm && postBelongsToUser && (
                 <button className="spot-detail-button spot-detail-image-button" onClick={()=> setShowImageForm(true)} >Add Image</button>
             )}
             <div>

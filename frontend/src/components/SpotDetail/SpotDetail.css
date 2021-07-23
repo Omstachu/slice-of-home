@@ -5,11 +5,13 @@ div {
 
 p {
     display: flex;
+    justify-content: center;
     width: 50%;
 }
 
 a {
     display: flex;
+    justify-content: row;
     width: 50%
 }
 
@@ -27,6 +29,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+.spot-detail-image-container {
+    display: flex;
+    justify-content: center;
 }
 
 .spot-detail-button {

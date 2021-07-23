@@ -1,23 +1,31 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addImageForm } from "../../store/image";
+import { useHistory } from "react-router-dom";
+import { addImageForm, getImage } from "../../store/image";
 
 const AddImageForm = ({spotId, hideForm}) =>{
     const [imageUrl, setImageUrl] = useState('')
+
     const updateImageUrl = (e) => setImageUrl(e.target.value)
 
     const dispatch = useDispatch()
+    const history = useHistory()
+
+    const image = useSelector(state => state.image)
+
+    useEffect(()=> {
+        dispatch(getImage())
+    }, [dispatch])
+
+    console.log(image)
 
     const onSubmit = async(e) => {
         e.preventDefault()
-
-        console.log('submit form button')
-
+        // console.log('submit form button')
         const payload = {
             spotId,
             url: imageUrl
         }
-
         await dispatch(addImageForm(payload))
         hideForm()
     }

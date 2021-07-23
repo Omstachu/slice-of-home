@@ -7,6 +7,14 @@ const {Image} = require ("../../db/models")
 
 const router = express.Router()
 
+router.get('/', asyncHandler(async(req,res)=>{
+    const images = await Image.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
+    })
+    return res.json(images)
+}))
 
 router.post('/', asyncHandler(async(req,res)=>{
     const image = await Image.create(req.body)
