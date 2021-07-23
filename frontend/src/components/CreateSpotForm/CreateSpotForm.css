@@ -1,8 +1,11 @@
 .create-spot-form-container {
     position: relative;
     display: flex;
+    justify-content: center;
     width: 100%;
+    /* padding-bottom: 200px; */
     align-items: center;
+    /* background-color: #F5F2DB; */
 }
 
 .create-spot-form {
@@ -10,11 +13,17 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    box-shadow: 4px 4px #F5F2DB;
+    border-radius: 6px;
+    border-color: #F0465D;
+    width: 35%;
+    margin-top: 70px;
+    background-color: #0E416A;
 }
 
 input {
     display: flex;
+    position: relative;
     margin: 2px;
     box-shadow: 2px 2px #708ccc;
     border-radius: 7px;
@@ -23,15 +32,16 @@ input {
     font-weight: 900;
     color: #22396F;
     text-align: center;
-    width: 33%;
+    width: 50%;
     height: 40px;
-    background-color: #7FDCDC
+    background-color: #7FDCDC;
+    bottom: 10px
 }
 
 .submit-button {
     display: flex;
     position: relative;
-    padding: 10px;
+    padding: 10px 40px;
     margin: 10px;
     width: 15%;
     font-weight: 900;

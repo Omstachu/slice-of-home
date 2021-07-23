@@ -1,8 +1,16 @@
-/* TODO Add site wide styles */
-
-
-/* @font-face {
+    /* TODO Add site wide styles */
+    /* @font-face {
     font-family: 'Crimson Text', serif;
     font-weight: 900;
     src: url('https://fonts.googleapis.com/css?family=Montserrat');
 } */
+    
+    body {
+        background-color: #F5F2DB;
+        background-image: url("https://cutewallpaper.org/21/abstract-shapes-background/Abstract-Shapes-Background-Colour-Vector-Free-Download.jpg");
+        background-repeat: no-repeat;
+        /* background-position-x: center; */
+        /* background-position-y: center; */
+        background-attachment: fixed;
+        background-size: cover;
+    }

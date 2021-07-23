@@ -38,7 +38,10 @@ const SpotsDisplay = () => {
                         return (
                             <div key={spot.id}>
                                 <NavLink to={`/spots/${spot.id}`}>
-                                    <img src={image} alt="placeholder"/>
+                                    <div className = 'spot-display-card'>
+                                        <img src={image} alt="placeholder"/>
+                                        <p>{spot.name}</p>
+                                    </div>
                                 </NavLink>
                             </div>
                         )

@@ -60,7 +60,7 @@ function SignupFormPage () {
             <label>
                 Password
                 <input
-                type='text'
+                type='password'
                 value={password}
                 onChange={e=>setPassword(e.target.value)}
                 required
@@ -69,7 +69,7 @@ function SignupFormPage () {
             <label>
                 Confirm Password
                 <input
-                type='text'
+                type='password'
                 value={confirmPassword}
                 onChange={e=>setConfirmPassword(e.target.value)}
                 required

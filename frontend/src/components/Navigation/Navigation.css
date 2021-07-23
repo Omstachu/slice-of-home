@@ -6,10 +6,12 @@
     font-size: x-large;
     font-family: 'Lora', serif;
     font-weight: 900;
+    margin: 4px;
 }
 
 .nav-links-container {
     display: flex;
+    /* position: sticky; */
     justify-content: space-around;
     align-items: center;
     margin: auto;
