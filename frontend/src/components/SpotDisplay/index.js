@@ -29,9 +29,6 @@ const SpotsDisplay = () => {
     return (
         <main>
             <div>
-                <h2>
-                    Test
-                </h2>
                 <div className= 'image-container'>
                     {spots.map((spot) => {
                         const image = spot.Images[0]?.url

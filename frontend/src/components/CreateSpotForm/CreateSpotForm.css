@@ -28,6 +28,7 @@
     box-shadow: 2px 2px #708ccc;
     border-radius: 7px;
     border-color: #708ccc;
+    border-style: ridge;
     font-family: 'Exo 2', sans-serif;
     font-weight: 900;
     color: #22396F;
@@ -47,7 +48,6 @@
     font-weight: 900;
     color: #0E416A;
     justify-content: center;
-    background-color: lightgray;
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 2px 2px #708ccc;

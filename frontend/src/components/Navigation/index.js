@@ -15,10 +15,10 @@ function Navigation ({isLoaded}) {
     } else {
         sessionLinks = (
             <>
-                    <div className="nav-links-container">
+                    {/* <div className="nav-links-container"> */}
                         <NavLink className="Navbar-link" to='/login'>Log in</NavLink>
                         <NavLink className="Navbar-link" to='/signup'>Sign Up</NavLink>
-                    </div>
+                    {/* </div> */}
             </>
 
         )

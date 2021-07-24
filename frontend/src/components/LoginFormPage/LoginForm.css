@@ -2,15 +2,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #0E416A; */
+    width: 40%;
+    margin: auto;
+    margin-top: 70px;
+    background-color: #0E416A;
+    border-radius: 7px;
+    box-shadow: 2px 2px #F0465D;
+    border-style: ridge;
+    border-width: 4px;
 }
 
 .login-form-button {
+    display: flex;
+    position: relative;
+    padding: 10px;
     margin: 10px;
+    width: 30%;
+    font-weight: 900;
+    justify-content: center;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.login-form-login-button {
+    /* margin-top: 10px; */
+    color: #0E416A;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F0465D;
+}
+
+.login-form-demo-button {
+    color: #298497;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F5F2DB;
 }
 
 .login-form-input {
     width: 100%;
+    margin: 5px;
 }
 
 .login-form-label {
@@ -18,4 +47,5 @@
     flex-direction: column;
     align-items: center;
     font-weight: 900;
+    color: #F5F2DB;
 }
