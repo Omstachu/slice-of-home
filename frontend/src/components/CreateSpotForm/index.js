@@ -16,7 +16,14 @@ const CreateSpotForm = () => {
     const [validationErrors, setValidationErrors] = useState([])
 
     const sessionUser = useSelector(state => state.session)
-    const id = sessionUser.user.id
+
+    const history = useHistory()
+
+    if(!sessionUser?.user?.id){
+        history.push('/login')
+    }
+    const id = sessionUser?.user?.id
+
 
 
     const updateName = e => setName(e.target.value)
@@ -28,7 +35,6 @@ const CreateSpotForm = () => {
     const updateDescription = e => setDescription(e.target.value)
 
     const dispatch = useDispatch()
-    const history = useHistory()
 
     // const largestSpot = useSelector(state => {
     //     return state.spot?.list[0]?.id + 1

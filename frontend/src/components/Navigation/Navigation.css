@@ -75,7 +75,7 @@
 
 .profile-button {
     display: flex;
-    background-color: #F0465D;
+    [] background-color: #F0465D;
 }
 
 
