@@ -21,7 +21,7 @@
     background-color: #0E416A;
 }
 
-input {
+.create-spot-form-input {
     display: flex;
     position: relative;
     margin: 2px;

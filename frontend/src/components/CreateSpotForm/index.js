@@ -77,14 +77,14 @@ const CreateSpotForm = () => {
             <form className='create-spot-form' onSubmit={onSubmit}>
                 <ul>
                 </ul>
-                <input
+                <input className="create-spot-form-input"
                     type='text'
                     placeholder='Name'
                     required
                     value={name}
                     onChange={updateName}
                     />
-                <input
+                <input className="create-spot-form-input"
                     type='text'
                     placeholder='Country'
                     required
@@ -98,7 +98,7 @@ const CreateSpotForm = () => {
                     value={region}
                     onChange={updateRegion}
                     /> */}
-                <input
+                <input className="create-spot-form-input"
                     type='text'
                     placeholder='City'
                     required
@@ -112,14 +112,14 @@ const CreateSpotForm = () => {
                     value={address}
                     onChange={updateAddress}
                     /> */}
-                <input
+                <input className="create-spot-form-input"
                     type='text'
                     placeholder='Description'
                     required
                     value={description}
                     onChange={updateDescription}
                     />
-                <input
+                <input className="create-spot-form-input"
                     type='text'
                     placeholder='Url to Image'
                     required

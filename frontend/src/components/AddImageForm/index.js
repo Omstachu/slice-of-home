@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addImageForm, getImage } from "../../store/image";
+import './AddImageForm.css'
 
 const AddImageForm = ({spotId, hideForm}) =>{
     const [imageUrl, setImageUrl] = useState('')
@@ -36,7 +37,7 @@ const AddImageForm = ({spotId, hideForm}) =>{
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className='add-image-form-container' onSubmit={onSubmit}>
                 <input
                     type='text'
                     placeholder='Image Url'
@@ -44,8 +45,8 @@ const AddImageForm = ({spotId, hideForm}) =>{
                     value={imageUrl}
                     onChange={updateImageUrl}
                 />
-                <button className= 'spot-detail-button' type='submit'>Submit</button>
-                <button className= 'spot-detail-button' onClick={handleCancel} type='submit'>Cancel</button>
+                <button className= 'spot-detail-button add-image-submit-button' type='submit'>Submit</button>
+                <button className= 'spot-detail-button add-image-cancel-button' onClick={handleCancel} type='submit'>Cancel</button>
 
         </form>
     )

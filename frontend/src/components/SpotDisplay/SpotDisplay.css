@@ -1,17 +1,36 @@
-img {
+.spot-display-image {
     width: 400px;
     height: 300px;
-    margin: 4px;
-    border-radius: 1px;
-    border-style: solid;
-    border-color: #89ABE3FF;
+    margin: 10px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: ridge;
+    border-color: #F5F2DB;
     box-sizing: border-box;
+    box-shadow: 2px 2px #7FDCDC;
+}
+
+.spot-display-title {
+    background-color: #0E416A;
+    color: #F5F2DB;
+    font-weight: 900;
+    border-radius: 7px;
+    border-width: 2px;
+    border-style: ridge;
+    box-shadow: 2px 2px #7FDCDC;
 }
 
 .spot-display-card {
     display: flex;
+    margin: 4px;
     flex-direction: column;
     align-items: center;
+    background-color: #298497;
+    border-radius: 7px;
+    border-style: ridge;
+    border-width: 3px;
+    border-color: #7FDCDC;
+    box-shadow: 3px 3px #0E416A;
 }
 
 .image-container {

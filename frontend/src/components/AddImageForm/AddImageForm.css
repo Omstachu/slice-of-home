@@ -1,0 +1,24 @@
+.add-image-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.add-image-form-input {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+
+.add-image-submit-button {
+    color: #0E416A;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F0465D;
+}
+
+.add-image-cancel-button {
+    color: #F0465D;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #0E416A;
+}
