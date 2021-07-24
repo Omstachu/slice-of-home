@@ -50,3 +50,5 @@
 
 
 ### state.spot[id] sometimes just doesn't work
+
+## Heroku wasn't building because of a line in my index.html

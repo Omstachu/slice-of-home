@@ -2,6 +2,8 @@ import React, {useState} from "react"
 import * as sessionActions from '../../store/session'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import isEmail from 'validator/es/lib/isEmail'
+
 import './SignupForm.css'
 
 function SignupFormPage () {
@@ -21,7 +23,14 @@ function SignupFormPage () {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (password === confirmPassword) {
+        const errors = []
+        if (!isEmail(email)) {
+            errors.push('Please provide a valid email')
+        }
+        if (password !== confirmPassword) {
+            errors.push('Password fields must match')
+        }
+        if (errors.length === 0) {
             setErrors([])
             return dispatch(sessionActions.signup({username, email, password }))
                 .catch(async (res) => {
@@ -29,7 +38,7 @@ function SignupFormPage () {
                     if (data && data.errors) setErrors(data.errors)
                 })
         }
-        return setErrors(['Password fields must match'])
+        return setErrors(errors)
     }
 
     return (

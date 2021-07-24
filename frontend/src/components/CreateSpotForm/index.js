@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createSpotForm, getSpot } from "../../store/spot";
 
+
 import './CreateSpotForm.css'
 
 const CreateSpotForm = () => {
@@ -36,15 +37,18 @@ const CreateSpotForm = () => {
 
     const dispatch = useDispatch()
 
-    // const largestSpot = useSelector(state => {
-    //     return state.spot?.list[0]?.id + 1
-    // })
+    // const validate = () => {
+    //     const validationErrors = [];
 
-    // const spot = useSelector(state => {
-    //     return state.spot
-    // })
-    // console.log(largestSpot)
-    // console.log(spot)
+    //     if (!name) validationErrors.push('Please provide a Name')
+    //     if (!country) validationErrors.push('Please provide a country')
+    //     if (!city) validationErrors.push('Please provide a city')
+    //     if (!description) validationErrors.push('Please provide a description')
+    //     if (!url) validationErrors.push('Please provide a url')
+
+    //     return validationErrors
+
+    // }
 
 
     useEffect(() => {
@@ -52,8 +56,18 @@ const CreateSpotForm = () => {
     },[dispatch])
 
     const state = useSelector((state) => state)
+
     const onSubmit = async(e) => {
         e.preventDefault();
+
+        // const errors = validate()
+
+        // if (errors.length > 0 ){
+        //     setValidationErrors(errors)
+        // } else {
+        //     setValidationErrors([])
+        // }
+
 
         const payload = {
             userId: id,
@@ -65,16 +79,13 @@ const CreateSpotForm = () => {
             url,
         }
 
-        const res = await dispatch(createSpotForm(payload))
-        // console.log(res)
+        await dispatch(createSpotForm(payload))
+
         const newId = state.spot.list[0].id + 1
-        // history.push(`/spots/${newId}`)
+
         history.push(`/spots/${newId}`)
-        // console.log(res)
-        // let createdSpot;
-        // if (createdSpot){
-        //     history.push('/')
-        // }
+
+        // console.log(validationErrors)
     }
 
 
@@ -82,6 +93,7 @@ const CreateSpotForm = () => {
         <div className="create-spot-form-container">
             <form className='create-spot-form' onSubmit={onSubmit}>
                 <ul>
+                    {/* {validationErrors.map(error => <li key={error}>{error}</li>)} */}
                 </ul>
                 <input className="create-spot-form-input"
                     type='text'

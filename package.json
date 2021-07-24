@@ -19,5 +19,8 @@
     "bugs": {
         "url": "https://github.com/Omstachu/authenticate-me/issues"
     },
-    "homepage": "https://github.com/Omstachu/authenticate-me#readme"
+    "homepage": "https://github.com/Omstachu/authenticate-me#readme",
+    "dependencies": {
+        "validator": "^13.6.0"
+    }
 }
