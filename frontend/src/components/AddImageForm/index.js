@@ -38,7 +38,7 @@ const AddImageForm = ({spotId, hideForm}) =>{
 
     return (
         <form className='add-image-form-container' onSubmit={onSubmit}>
-                <input
+                <input className='add-image-form-input'
                     type='text'
                     placeholder='Image Url'
                     required

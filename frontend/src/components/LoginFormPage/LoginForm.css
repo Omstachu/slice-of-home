@@ -1,0 +1,21 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #0E416A; */
+}
+
+.login-form-button {
+    margin: 10px;
+}
+
+.login-form-input {
+    width: 100%;
+}
+
+.login-form-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+}

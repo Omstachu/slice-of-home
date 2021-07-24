@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getSpot, editSpot } from "../../store/spot";
+import './EditSpotForm.css'
 
 const EditSpotForm = ({spotId, hideForm}) => {
     const [name, setName] = useState("")
@@ -52,10 +53,9 @@ const EditSpotForm = ({spotId, hideForm}) => {
 
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
+            <form className='edit-spot-form-container' onSubmit={onSubmit}>
                 <ul></ul>
-                <input
+                <input className='edit-spot-form-input'
                     type='text'
                     placeholder='Name'
                     required
@@ -69,7 +69,7 @@ const EditSpotForm = ({spotId, hideForm}) => {
                     value={country}
                     onChange={updateCountry}
                     /> */}
-                <input
+                <input className='edit-spot-form-input'
                     type='text'
                     placeholder='Description'
                     required
@@ -83,8 +83,8 @@ const EditSpotForm = ({spotId, hideForm}) => {
                     value={url}
                     onChange={updateUrl}
                     /> */}
-                <button type='submit'>Submit</button>
-                <button onClick={handleCancel}>Cancel</button>
+                <button className= 'spot-detail-button edit-spot-submit-button' type='submit'>Submit</button>
+                <button className= 'spot-detail-button edit-spot-cancel-button' onClick={handleCancel}>Cancel</button>
                 {/* <div>
                     <img src={url} alt="preview"/>
                 </div> */}
@@ -96,7 +96,6 @@ const EditSpotForm = ({spotId, hideForm}) => {
                 onChange={updateCity}
                 /> */}
             </form>
-        </div>
     )
 }
 

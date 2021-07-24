@@ -1,0 +1,24 @@
+.edit-spot-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit-spot-form-input {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+
+.edit-spot-submit-button {
+    color: #0E416A;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F0465D;
+}
+
+.edit-spot-cancel-button {
+    color: #F0465D;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #0E416A;
+}
