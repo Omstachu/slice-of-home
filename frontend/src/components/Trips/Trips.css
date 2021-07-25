@@ -1,0 +1,29 @@
+.trip-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.trip-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.trip-button {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    font-weight: 900;
+    justify-content: center;
+    /* background-color: lightgray;b */
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #F0465D;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #0E416A;
+}

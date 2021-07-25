@@ -99,6 +99,12 @@ input {
     background-color: #298497
 }
 
+.spot-detail-trips-button {
+    color: #298497;
+    box-shadow: 2px 2px #708ccc;
+    background-color: #F5F2DB
+}
+
 .fas {
     display: flex;
     position: relative;

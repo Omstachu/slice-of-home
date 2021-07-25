@@ -25,6 +25,7 @@ const initialState = {
     list: [],
 }
 
+
 export const getSpotDetail = (id) => async dispatch => {
     const res = await fetch(`/api/spots/${id}`)
 

@@ -9,6 +9,7 @@ import EditSpotForm from '../EditSpotForm';
 import AddImageForm from '../AddImageForm';
 
 import './SpotDetail.css'
+import { addTrip } from '../../store/trips';
 
 const SpotDetail = () => {
     // const [name, setName] = useState('')
@@ -108,6 +109,18 @@ const SpotDetail = () => {
 
     }
 
+    const handleAddTrip = async e => {
+        e.preventDefault()
+        const payload = {
+            spotId: id,
+            userId: sessionUserId,
+            startDate: new Date(),
+            endDate: new Date(),
+        }
+        await dispatch(addTrip(payload))
+        history.push('/')
+    }
+
     let editContent = null
     let editImageContent = null
 
@@ -122,6 +135,8 @@ const SpotDetail = () => {
             <AddImageForm spotId={id} hideForm={() => setShowImageForm(false)}/>
         )
     }
+
+
 
     // if(showDeleteForm) {
     //     deleteButton = (
@@ -148,8 +163,8 @@ const SpotDetail = () => {
                 <img className='spot-detail-image'  src={image} alt={name}/>
             </a> */}
             <p>{description}</p>
-            {postBelongsToUser && (
-                <button className="spot-detail-button spot-detail-delete-button" onClick={handleDelete}>Delete</button>
+            {sessionUserId && (
+                <button className="spot-detail-button spot-detail-trips-button" onClick={handleAddTrip}>Add to Trips</button>
             )}
             {/* {deleteButton} */}
 
@@ -167,6 +182,9 @@ const SpotDetail = () => {
                 {editImageContent}
             </div>
 
+                {postBelongsToUser && (
+                    <button className="spot-detail-button spot-detail-delete-button" onClick={handleDelete}>Delete</button>
+                )}
 
 
 
