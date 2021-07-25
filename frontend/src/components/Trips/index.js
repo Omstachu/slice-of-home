@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getTrips } from "../../store/trips";
+import { getTrips, deleteTrip } from "../../store/trips";
 import { getSpot } from "../../store/spot";
 import './Trips.css'
 
@@ -60,17 +60,21 @@ const Trips = () => {
     // console.log('tripsArr', tripsArr)
     // console.log('userTrips', userTrips)
 
-    const handleDelete = (e, spotId) => {
+    const handleDelete = async (e, spotId) => {
         e.preventDefault()
         const tripToDelete = userTrips.find(trip=>{
             return trip.spotId === spotId
         })
-        console.log(tripToDelete.id)
+        await dispatch(deleteTrip(tripToDelete.id))
         // console.log(spotId)
+        history.push('/')
     }
 
     return (
         <div className="trip-item-container">
+            {(spotImages.length === 0) && (
+                <h2>Your Collection is Empty!</h2>
+            )}
             {spotImages.map((image,idx) => {
                 return (
                         <div className="trip-card-container">

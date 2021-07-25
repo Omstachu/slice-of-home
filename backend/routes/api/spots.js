@@ -70,7 +70,6 @@ router.delete('/:id', asyncHandler(async(req,res) =>{
     const images = await Image.findAll({
         where: {spotId: id}
     })
-    console.log(images)
     images.map(image => {
         image.destroy()
     })

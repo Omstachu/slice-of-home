@@ -38,6 +38,16 @@ export const addTrip = (payload) => async dispatch => {
     }
 }
 
+export const deleteTrip = (id) => async dispatch => {
+    const res = await csrfFetch(`/api/trips/${id}`, {
+        method: 'DELETE',
+        headers: {"Content-Type": "application/json"},
+    })
+
+    return await res.json()
+}
+
+
 const initialState = {
     list: []
 }
