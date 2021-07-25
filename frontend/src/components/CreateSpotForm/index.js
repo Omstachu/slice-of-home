@@ -50,6 +50,7 @@ const CreateSpotForm = () => {
         await dispatch(createSpotForm(payload))
         const newId = state.spot.list[0].id + 1
         history.push(`/spots/${newId}`)
+        history.push(`/spots/${newId}`)
     }
 
     return (

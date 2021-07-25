@@ -52,7 +52,7 @@ const Trips = () => {
         const tripToDelete = userTrips.find(trip=>{
             return trip.spotId === spotId
         })
-        await dispatch(deleteTrip(tripToDelete.id))
+        await dispatch(deleteTrip(tripToDelete?.id))
 
         history.push('/spots')
         history.push('/')
@@ -67,7 +67,7 @@ const Trips = () => {
                 return (
                         <div key={idx} className="trip-card-container">
                             <NavLink to={`/spots/${image?.spotId}`}>
-                                <img className="spot-detail-image" src={image?.url} alt='name'></img>
+                                <img className="spot-detail-image" src={image?.url} alt='NOT AVAILABLE'></img>
                             </NavLink>
                             <button className="trip-button" onClick={e=> handleDelete(e, image?.spotId)}>Delete</button>
                         </div>
