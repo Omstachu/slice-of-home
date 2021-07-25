@@ -60,8 +60,6 @@ export const editSpot = (id, payload) => async dispatch => {
 
 
     const newSpot = await res.json()
-    // console.log("--------------------------------------------")
-    // console.log(newSpot)
 
     if(res.ok){
         dispatch(addOneSpot(newSpot))
@@ -69,13 +67,11 @@ export const editSpot = (id, payload) => async dispatch => {
 }
 
 export const deleteSpot = (id) => async dispatch => {
-    const res = await csrfFetch(`/api/spots/${id}`,{
+    await csrfFetch(`/api/spots/${id}`,{
         method: 'DELETE',
         headers: {"Content-Type": "application/json"},
     })
 
-    const deletedSpot = await res.json()
-    // console.log(deletedSpot)
 }
 
 const spotReducer = (state = initialState, action) => {
@@ -84,7 +80,6 @@ const spotReducer = (state = initialState, action) => {
         const allSpots = {}
         if (action.list){
             action.list.forEach(spot => {
-                // console.log(spot)
                 allSpots[spot.id] = spot
             })
         }

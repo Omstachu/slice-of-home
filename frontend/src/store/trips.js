@@ -29,8 +29,6 @@ export const addTrip = (payload) => async dispatch => {
         body: JSON.stringify(payload)
     })
 
-    // console.log("payload", payload)
-
     const newTrip = await res.json()
 
     if(res.ok){

@@ -23,7 +23,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true))
   }, [dispatch])
 
-  console.log(sessionUser)
   return (
     <>
     <Navigation isLoaded={isLoaded}/>

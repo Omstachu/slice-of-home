@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {useSelector} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import ProfileButton from "./ProfileButton"
@@ -15,10 +15,8 @@ function Navigation ({isLoaded}) {
     } else {
         sessionLinks = (
             <>
-                    {/* <div className="nav-links-container"> */}
-                        <NavLink className="Navbar-link" to='/login'>Log in</NavLink>
-                        <NavLink className="Navbar-link" to='/signup'>Sign Up</NavLink>
-                    {/* </div> */}
+                    <NavLink className="Navbar-link" to='/login'>Log in</NavLink>
+                    <NavLink className="Navbar-link" to='/signup'>Sign Up</NavLink>
             </>
 
         )
