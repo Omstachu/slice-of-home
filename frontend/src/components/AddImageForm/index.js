@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { addImageForm, getImage } from "../../store/image";
 import './AddImageForm.css'
 
@@ -9,6 +9,7 @@ const AddImageForm = ({spotId, hideForm}) =>{
 
     const updateImageUrl = (e) => setImageUrl(e.target.value)
 
+    const {id} = useParams();
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -30,8 +31,10 @@ const AddImageForm = ({spotId, hideForm}) =>{
 
 
         await dispatch(addImageForm(payload))
-        setImageUrl('')
+        console.log(id);
         hideForm()
+        history.push('/')
+        history.push(`/spots/${id}`)
     }
 
     const handleCancel = e => {

@@ -67,6 +67,7 @@ const Trips = () => {
         })
         await dispatch(deleteTrip(tripToDelete.id))
         // console.log(spotId)
+        history.push('/spots')
         history.push('/')
     }
 
