@@ -27,18 +27,20 @@ input {
 .image-div {
     display: flex;
     justify-content: row;
-    width: 50%
+    width: 50%;
+    margin: auto;
 }
 
 .spot-detail-image {
     display: flex;
-    width: 90%;
-    height: 80%;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
     border-width: 1px;
     border-style: ridge;
     border-color: #7FDCDC;
     box-shadow: 4px 4px 6px #F0465D;
+    margin: auto;
 }
 
 .spot-detail-image:hover {

@@ -7,6 +7,7 @@ import SignupFormPage from './components/SignupFormPage';
 import SpotsDisplay from './components/SpotDisplay';
 import SpotDetail from './components/SpotDetail';
 import CreateSpotForm from './components/CreateSpotForm';
+import Trips from './components/Trips';
 
 import Navigation from './components/Navigation'
 import * as sessionActions from "./store/session"
@@ -37,7 +38,9 @@ function App() {
           </div>
         )}
         {sessionUser && (
-          <h2>Logged In</h2>
+          <h2>
+            <Trips />
+          </h2>
         )}
       </Route>
       <Route path='/login'>
