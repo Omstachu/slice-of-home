@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getTrips, deleteTrip } from "../../store/trips";
@@ -79,7 +80,9 @@ const Trips = () => {
             {spotImages.map((image,idx) => {
                 return (
                         <div className="trip-card-container">
-                            <img className="spot-detail-image" key={idx} src={image?.url} alt='name'></img>
+                            <NavLink to={`/spots/${image?.spotId}`}>
+                                <img className="spot-detail-image" key={idx} src={image?.url} alt='name'></img>
+                            </NavLink>
                             <button className="trip-button" onClick={e=> handleDelete(e, image?.spotId)}>Delete</button>
                             {/* <button className="trip-button">Delete</button> */}
                         </div>
