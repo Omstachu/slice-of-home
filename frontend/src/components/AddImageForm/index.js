@@ -12,13 +12,13 @@ const AddImageForm = ({spotId, hideForm}) =>{
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const image = useSelector(state => state.image)
+    // const image = useSelector(state => state.image)
 
     useEffect(()=> {
         dispatch(getImage())
     }, [dispatch])
 
-    console.log(image)
+    // console.log(image)
 
     const onSubmit = async(e) => {
         e.preventDefault()
@@ -27,7 +27,10 @@ const AddImageForm = ({spotId, hideForm}) =>{
             spotId,
             url: imageUrl
         }
+
+
         await dispatch(addImageForm(payload))
+        setImageUrl('')
         hideForm()
     }
 

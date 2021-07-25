@@ -35,6 +35,7 @@
     justify-content: center;
     align-items: center;
     top: 90px;
+    /* right: 09px; */
     /* margin: 10px; */
     padding: 20px;
     border-radius: 7px;
@@ -66,7 +67,7 @@
     font-weight: 900;
     color: #0E416A;
     justify-content: center;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 2px 2px #708ccc;
@@ -75,7 +76,7 @@
 
 .profile-button {
     display: flex;
-    [] background-color: #F0465D;
+    background-color: #F0465D;
 }
 
 

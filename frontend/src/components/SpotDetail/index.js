@@ -36,7 +36,7 @@ const SpotDetail = () => {
     })
 
     const sessionUser = useSelector(state => state.session)
-    const sessionUserId = sessionUser.user.id
+    const sessionUserId = sessionUser?.user?.id
 
     const spotUserId = spot[id]?.userId
     // console.log("postUserId", spotUserId, "\nsessionId", sessionUserId)
@@ -135,12 +135,12 @@ const SpotDetail = () => {
             <div className='spot-detail-image-container'>
                 {images && images.map((image, idx)=>{
                     return (
-                        <a href={image} key={idx}>
+                        <div className='image-div' key={idx}>
                                 <img className='spot-detail-image' src={image} alt={name}/>
                             {/* <div>
                                 <button className="spot-detail-button spot-detail-delete-button">Delete</button>
                             </div> */}
-                        </a>
+                        </div>
                     )
                 })}
             </div>
@@ -161,7 +161,7 @@ const SpotDetail = () => {
             </div>
 
             {!showImageForm && postBelongsToUser && (
-                <button className="spot-detail-button spot-detail-image-button" onClick={()=> setShowImageForm(true)} >Add Image</button>
+                <button className="spot-detail-button spot-detail-image-button" onClick={()=> setShowImageForm(true)}>Add Image</button>
             )}
             <div>
                 {editImageContent}

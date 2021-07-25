@@ -9,12 +9,6 @@ p {
     width: 50%;
 }
 
-a {
-    display: flex;
-    justify-content: row;
-    width: 50%
-}
-
 input {
     display: flex;
     margin: 2px;
@@ -30,10 +24,28 @@ input {
     background-color: #7FDCDC
 }
 
+.image-div {
+    display: flex;
+    justify-content: row;
+    width: 50%
+}
+
 .spot-detail-image {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: ridge;
+    border-color: #7FDCDC;
+    box-shadow: 4px 4px 6px #F0465D;
+}
+
+.spot-detail-image:hover {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    box-shadow: 2px 2px 4px #0E416A;
 }
 
 .spot-title {
@@ -43,12 +55,15 @@ input {
 .spot-detail-container {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
 }
 
 .spot-detail-image-container {
     display: flex;
     justify-content: center;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
 }
 
 .spot-detail-button {
@@ -80,4 +95,10 @@ input {
     color: #F5F2DB;
     box-shadow: 2px 2px #708ccc;
     background-color: #298497
+}
+
+.fas {
+    display: flex;
+    position: relative;
+    margin: auto;
 }

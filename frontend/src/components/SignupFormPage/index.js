@@ -42,49 +42,49 @@ function SignupFormPage () {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
             <ul>
                 {errors.map((error, idx) => {
-                    return <li key={idx}>{error}</li>
+                    return <li className='signup-form-error' key={idx}>{error}</li>
                 })}
             </ul>
-            <label>
+            <label className="login-form-label">
                 Username
-                <input
+                <input className="login-form-input"
                 type='text'
                 value={username}
                 onChange={e=>setUsername(e.target.value)}
                 required
                 />
             </label>
-            <label>
+            <label className="login-form-label">
                 Email
-                <input
+                <input className="login-form-input"
                 type='text'
                 value={email}
                 onChange={e=>setEmail(e.target.value)}
                 required
                 />
             </label>
-            <label>
+            <label className="login-form-label">
                 Password
-                <input
+                <input className="login-form-input"
                 type='password'
                 value={password}
                 onChange={e=>setPassword(e.target.value)}
                 required
                 />
             </label>
-            <label>
+            <label className="login-form-label">
                 Confirm Password
-                <input
+                <input className="login-form-input"
                 type='password'
                 value={confirmPassword}
                 onChange={e=>setConfirmPassword(e.target.value)}
                 required
                 />
             </label>
-            <button type="submit">Sign Up</button>
+            <button className='login-form-login-button login-form-button' type="submit">Sign Up</button>
         </form>
     )
 }
